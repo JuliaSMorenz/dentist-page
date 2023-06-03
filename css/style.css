@@ -1,0 +1,66 @@
+p{
+    margin: 5px;
+}
+
+.btn-pink{
+    background-color: pink;
+    color: purple;
+    border-color: purple;
+    border-radius: 0;
+}
+
+.btn-pink:hover{
+    background-color: purple;
+    color: white;
+}
+
+.navbar-toggler{
+    border: none;
+}
+
+.nav-link{
+    color: #333333;
+}
+
+.services{
+    background-image: url(../img/background.jpg);
+    background-size: cover;
+}
+
+.card-services{
+    background-color: white;
+    border-radius: 5px;
+    padding: 48px 20px;
+    margin-top: 24px;
+}
+
+.services h2, .services p{
+    color: white;
+}
+
+.card-services p{
+    color: #666666;
+}
+
+.content-services{
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+
+.presentation{
+    margin-top: 100px;
+}
+
+.contact{
+    margin-top: 100px;
+}
+
+#esqueci-senha a{
+    font-size: 12px;
+}
+
+@media (max-width: 991px){
+    .presentation, .contact{
+        margin-top: 50px;
+    }
+}

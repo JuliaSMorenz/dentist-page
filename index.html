@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OdontoRio</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastro de Clientes</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+
+          <form autocomplete="off">
+
+            <div class="row">
+
+              <div class="col-md-6">
+                <input type="text" placeholder="Nome" class="form-control mb-2">
+              </div>
+
+              <div class="col-md-6">
+                <input type="text" placeholder="E-mail" class="form-control mb-2">
+              </div>
+
+              <div class="col-md-6">
+                <input type="text" placeholder="Data de Nascimento" id="data" class="form-control mb-2">
+              </div>
+
+              <div class="col-md-6">
+                <input type="text" placeholder="Cpf" id="cpf" class="form-control mb-2">
+              </div>
+
+              <!-- Endereço -->
+
+              <div class="col-8">
+                <input type="text" placeholder="Cep" id="cep" class="form-control mb-2">
+              </div>
+
+              <div class="col-4">
+                <a href="https://buscacepinter.correios.com.br/app/endereco/index.php" class="btn btn-link" target="_blank">Não sabe o cep? Clique aqui</a>
+              </div>
+
+              <!-- Logradouro, Num, Comp -->
+
+              <div class="col-md-6">
+                <input type="text" placeholder="Logradouro" id="logradouro" class="form-control mb-2">
+              </div>
+
+              <div class="col-md-2">
+                <input type="text" placeholder="Número" id="numero" class="form-control mb-2">
+              </div>
+
+              <div class="col-md-4">
+                <input type="text" placeholder="Complemento" class="form-control mb-2">
+              </div>
+
+              <!-- Bairro, Cidade, UF -->
+
+              <div class="col-md-5">
+                <input type="text" placeholder="Bairro" id="bairro" class="form-control mb-2">
+              </div>
+
+              <div class="col-md-5">
+                <input type="text" placeholder="Cidade" id="cidade" class="form-control mb-2">
+              </div>
+
+              <div class="col-md-2">
+                <input type="text" placeholder="UF" id="uf" class="form-control mb-2">
+              </div>
+
+            </div>
+
+            <button class="btn btn-primary">Realizar Cadastro</button>
+
+          </form>
+
+        </div>
+
+        <div class="modal-footer">
+          <em>Seus dados estarão protegidos</em>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal login -->
+  <div class="modal fade" id="loginmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Área restrita</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+
+          <form autocomplete="off">
+
+            <div class="row">
+
+              <div class="col-md-12">
+                <p>Login</p>
+                <input type="text" placeholder="E-mail" class="form-control mb-2">
+              </div>
+
+              <div class="col-md-12">
+                <p>Senha</p>
+                <input type="password" placeholder="*******" class="form-control mb-2">
+              </div>
+
+              <div class="col d-flex flex-row-reverse" id="esqueci-senha">
+                <a href="#" class="btn btn-link" target="_blank">Esqueceu sua senha?</a>
+              </div>
+
+            </div>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-primary">Entrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <nav class="navbar navbar-expand-lg bg-white">
+        <div class="container">
+          
+          <a class="navbar-brand" href="#"><img src="img/logo.svg" alt=""></a>
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Botão para abrir e fechar o menu">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Início</a>
+              </li>
+              <li class="nav-item ms-lg-5">
+                <a class="nav-link" href="#">Quem Somos</a>
+              </li>
+              <li class="nav-item ms-lg-5">
+                <a class="nav-link" href="#">Nossos Seviços</a>
+              </li>
+              <li class="nav-item dropdown ms-lg-5">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Fale Conosco
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+            </ul>
+
+            <button class="btn btn-primary ms-lg-5" data-bs-toggle="modal" data-bs-target="#loginmodal">Faça seu login</button>
+
+          </div>
+        </div>
+    </nav>
+
+    <!-- Slide -->
+    <!-- <img src="img/banner-1.jpg" alt="" class="w-100"> -->
+
+    <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
+
+      <div class="carousel-indicators">
+
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+
+      </div>
+
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <img src="img/banner-1.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h1>First slide label</h1>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="img/banner-2.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <p class="h1">First slide label</p>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="img/banner-3.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <p class="h1">First slide label</p>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="img/banner-4.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <p class="h1">First slide label</p>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="img/banner-5.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <p class="h1">First slide label</p>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!-- Slide -->
+
+    <div class="container presentation">
+
+      <div class="row align-items-center">
+
+        <div class="col-md-7">
+          <h2>Lorem ipsum dolor sit amet consectetur elit.</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam optio cum molestiae numquam nulla? Obcaecati similique at nesciunt tenetur quis corrupti laborum neque ipsam doloremque. Incidunt quam deleniti consequuntur impedit facere.</p>
+          <p>Facilis et aut debitis consectetur rem, autem officiis porro necessitatibus dicta reiciendis rerum modi quae dolorem quod perspiciatis accusantium!</p>
+          <a href="#" class="btn btn-primary mb-3 mb-md-0" data-bs-toggle="modal" data-bs-target="#exampleModal">Lorem Ipsum</a>
+        </div>
+
+        <!-- <div class="col-md-5 d-none d-md-block"> -->
+        <div class="col-md-5">
+
+          <picture>
+            <source srcset="img/imagem-contato.png" media="(max-width: 767px)">
+            <img src="img/sorriso.png" alt="" class="img-fluid">
+          </picture>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="bg-primary py-5">
+
+      <div class="container text-center text-white">
+
+        <div class="row">
+
+          <div class="col-md-4">
+            <img src="img/icon-1.svg" alt="">
+            <h3>Lorem ipsum dolor</h3>
+            <p>Facilis et aut debitis consectetur rem, autem officiis porro necessitatibus.</p>
+          </div>
+
+          <div class="col-md-4 my-5 my-md-0">
+            <img src="img/icon-2.svg" alt="">
+            <h3>Lorem ipsum dolor</h3>
+            <p>Facilis et aut debitis consectetur rem, autem officiis porro necessitatibus.</p>
+          </div>
+          
+          <div class="col-md-4">
+            <img src="img/icon-3.svg" alt="">
+            <h3>Lorem ipsum dolor</h3>
+            <p>Facilis et aut debitis consectetur rem, autem officiis porro necessitatibus.</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="services">
+
+      <div class="container">
+
+        <div class="row flex-column-reverse flex-xl-row">
+
+          <div class="col-xl-5 align-self-end text-center">
+            <img src="img/dentista.png" alt="" class="img-fluid">
+          </div>
+
+          <!-- <div class="col-1"></div> -->
+          
+          <div class="col-xl-6 offset-xl-1 align-self-center content-services">
+            <h2>Lorem ipsum dolor sit amet</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam optio cum molestiae numquam nulla? Obcaecati similique at nesciunt tenetur quis corrupti laborum neque ipsam doloremque. Incidunt quam deleniti consequuntur impedit facere. </p>
+
+            <!-- 12 cols -->
+            <div class="row">
+
+              <div class="col-md-6">
+                <div class="card-services">
+                  <h4>Lorem ipsum dolor</h4>
+                  <p>Lorem ipsum dolor sit amet cons ectetur adipisicing elit. Veniama optio cum molestiae</p>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="card-services">
+                  <h4>Lorem ipsum dolor</h4>
+                  <p>Lorem ipsum dolor sit amet cons ectetur adipisicing elit. Veniama optio cum molestiae</p>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="card-services">
+                  <h4>Lorem ipsum dolor</h4>
+                  <p>Lorem ipsum dolor sit amet cons ectetur adipisicing elit. Veniama optio cum molestiae</p>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="card-services">
+                  <h4>Lorem ipsum dolor</h4>
+                  <p>Lorem ipsum dolor sit amet cons ectetur adipisicing elit. Veniama optio cum molestiae</p>
+                </div>
+              </div>
+
+            </div>
+            
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="container contact">
+
+      <h2>Lorem ipsum dolor sit amet</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam optio cum molestiae numquam nulla? Obcaecati similique at nesciunt tenetur quis corrupti laborum neque ipsam doloremque. Incidunt quam deleniti consequuntur impedit facere.</p>
+
+      <div class="row">
+
+        <div class="col-md-6">
+
+          <form action="#">
+
+            <div class="form-floating mb-3">
+              <input type="text" id="nome" class="form-control" placeholder=" ">
+              <label for="nome">Seu nome</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="email" id="email" class="form-control" placeholder=" ">
+              <label for="email">Seu e-mail</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <textarea class="form-control" id="mensagem" placeholder=" " style="height: 150px;"></textarea>
+              <label for="mensagem">Sua mensagem</label>
+            </div>
+
+            <button class="btn btn-primary mb-3">Lorem Ipsum</button>
+
+          </form>
+
+        </div>
+        
+        <div class="col-md-6 align-self-end d-none d-md-block">
+          <img src="img/imagem-contato.png" alt="" class="img-fluid">
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-primary py-3 text-center text-white">
+      <span>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam optio cum molestiae numquam nulla.
+      </span>
+
+    </footer>
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="js/carousel.js"></script> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+    <script>
+
+      $(document).ready(function(){
+
+        $('#data').mask('00/00/0000');
+        $('#cpf').mask('000.000.000-00');
+        $('#cep').mask('00000-000');
+
+        //ao soltar uma tecla no campo cep
+        $('#cep').keyup(function(){
+          //console.log('ok');
+
+          var cepDigitado = $('#cep').val(); //guardando o valor digitado na variável
+          //console.log(cepDigitado);
+          //console.log(cepDigitado.length);
+
+          //Se a quantidade de caracteres do cepDigitado for igual a 9...
+          if(cepDigitado.length == 9){
+            $.getJSON('https://viacep.com.br/ws/'+cepDigitado+'/json/', 
+              function(dados){
+                //console.log(dados)
+                //== igual
+                //!= diferente
+                if(dados.erro != 'true'){
+                  $('#logradouro').val(dados.logradouro);
+                  $('#bairro').val(dados.bairro);
+                  $('#cidade').val(dados.localidade);
+                  $('#uf').val(dados.uf);
+                  $('#numero').focus();
+                }else{
+                  alert('Cep não encontrado!')
+                }
+              })
+            }
+         })
+      })
+
+    </script>
+
+
+</body>
+</html>
